@@ -15,8 +15,12 @@ Darker Black for important text - #333
   --color-body-primary: #c5c6c7;
   --color-body-secondary: #d7e5f0;
   --color-header-footer: #abdbff;
-
   --color-white: #ffffff;
+
+  --color-palette-grey: #f2f4ef;
+  --color-palette-blue: #c2e3f4;
+  --color-palette-orange: #efb730;
+  --color-palette-black: #030305;
 }
 
 * {
@@ -28,6 +32,7 @@ Darker Black for important text - #333
 
 html,
 body {
+  background-color: white;
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -42,51 +47,57 @@ h4,
 h5,
 h6,
 strong {
+  font-weight: bold;
   /* color: var(--color-text-important); */
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2em;
 }
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.8em;
 }
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.6em;
 }
 h4 {
-  font-size: 1.4rem;
+  font-size: 1.4em;
 }
 h5 {
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 h6 {
-  font-size: 1rem;
+  font-size: 1em;
 }
 
 body {
+  background-color: var(--color-palette-grey);
+
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 50em;
+  max-width: 800px;
+  /* max-width: 50em; */
   line-height: 1.5;
   /* padding: 4em 1em; */
 }
 
+body > * {
+  padding: 10px;
+}
+
 header,
 footer {
-  background-color: var(--color-header-footer);
-  padding: 10px;
+  background-color: var(--color-palette-blue);
 }
 header > *,
 footer > * {
-  /* color: var(--color-white); */
 }
 
 header {
-  border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
+  border-radius: 0 0 10px 10px;
 }
 
 .logo {
@@ -101,8 +112,18 @@ header {
 }
 
 main {
+  background-color: var(--color-palette-grey);
+
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+section {
+  background-color: var(--color-white);
   padding: 10px;
+  border-radius: 10px;
 }
 
 table,
@@ -114,14 +135,16 @@ td {
 th,
 td {
   /* margin: auto; */
-  padding: 5px ;
+  padding: 5px;
 }
 
 footer {
-  border-top: 1px solid black;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .container {
-  background-color: var(--color-body-secondary);
   padding: 2px 4px;
 }
